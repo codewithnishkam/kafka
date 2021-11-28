@@ -1,18 +1,27 @@
 from kafka import KafkaConsumer
 import sys
-## standard host and port offered by docker image running kafka server 
-bootstrap_servers= ['localhost:9092']
 ## default topic
-topic = "my-topic" #default topic
+topic = "my-topic"
 if len(sys.argv) > 2:
-    raise Exception("Maximou one parameter | topic expected. Default : my-topic")
+    raise Exception("Maximum 1 parameter allowed | 1 paramter topic expected. Default : my-topic")
 if len(sys.argv) == 2:
     topic = sys.argv[1]
-def startConsumerService(bootstrap_servers, topic):
+'''
+startConsumerService
+
+paramters 
+topic  String | Default "my-topic"
+
+Starts consuming messages on given topic
+'''
+
+def startConsumerService(topic=topic):
     ## To consume latest messages and auto-commit offsets
     consumer = KafkaConsumer(topic,
                              bootstrap_servers= ['localhost:9092'])
-    
+                             
+    ## Other ways to create a KafkaConsumer (For more info, visit https://kafka-python.readthedocs.io/en/master/apidoc/KafkaConsumer.html?highlight=kafkaconsumer)
+    ## comment line starting with single # represents a commented codeline. 
     ## consume earliest available messages, don't commit offsets
     #KafkaConsumer(auto_offset_reset='earliest', enable_auto_commit=False)
 
@@ -39,4 +48,4 @@ def startConsumerService(bootstrap_servers, topic):
 
         
 
-startConsumerService(bootstrap_servers, topic)
+startConsumerService(topic)
