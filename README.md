@@ -15,8 +15,9 @@ Dowload this repository and extract to kafka \
 kafka is the root folder for this project \
 Open new terminal = terminal in kafka root folder \
 Make sure docker is installed and running \
-Make sure python 2.7 is installed and path variables are rightly set
-
+Make sure python 2.7 is installed and path variables are rightly set \
+Install python package kafka-python \
+``` pip install kafka-python ```
 ## Run Kafka Server in Docker Container
 
 Open new terminal and run \
