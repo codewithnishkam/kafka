@@ -11,7 +11,7 @@ Should also work on linux
 
 # Run
 Be ready to open multiple terminals \
-Dowload this repository and extract \
+Dowload this repository and extract to kafka \
 kafka is the root folder for this project \
 Open new terminal = terminal in kafka root folder \
 Make sure docker is installed and running \
